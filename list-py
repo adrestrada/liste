@@ -1,0 +1,10 @@
+with open("heures.csv", newline="\n") as fic:
+   listing = fic.readlines()
+   for ligne in listing:
+       token = ligne.split()
+       #calculer la somme des heures
+       somme = 0
+       for tmp in token[2:7]:
+           somme += float(tmp)
+       print("{1:12s}Code {0:5s} a travaillé {2:7.2f} heures avec une "
+             "moyenne de {3:7.2f} / jour".format(token[0], token[1], somme, somme/5.0))
